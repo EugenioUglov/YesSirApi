@@ -1,0 +1,2 @@
+pluralize("family");
+pluralize.singular("men");
