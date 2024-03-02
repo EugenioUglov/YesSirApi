@@ -1,6 +1,7 @@
 const http = require("http");
 const url = require("url");
 const express = require("express");
+const router = express();
 
 const hostname = "0.0.0.0";
 const port = 3000;
