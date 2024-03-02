@@ -1,12 +1,12 @@
 const http = require("http");
 const url = require("url");
 const express = require("express");
-const router = express();
+const app = express();
 
 const hostname = "0.0.0.0";
 const port = 3000;
 
-router.get("/:id", function (req, res) {
+app.get("/:id", function (req, res) {
   console.log(req.params.id);
   res.render("test", { output: req.params.id });
 });
@@ -37,3 +37,5 @@ server.listen(port, hostname, () => {
 let pluralizer = require("./pluralize.js");
 console.log(pluralizer.singular("cars"));
 console.log(pluralizer.plural("family"));
+
+app.listen(3000);
