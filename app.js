@@ -8,7 +8,7 @@ const port = 3000;
 // });
 
 const server = http.createServer((req, res) => {
-  let urlParts = url.parse(req.url);
+//   let urlParts = url.parse(req.url);
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
