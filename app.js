@@ -38,4 +38,4 @@ let pluralizer = require("./pluralize.js");
 console.log(pluralizer.singular("cars"));
 console.log(pluralizer.plural("family"));
 
-app.listen(3000);
+app.listen(3000, function () { });
