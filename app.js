@@ -5,9 +5,10 @@ const express = require("express");
 const hostname = "0.0.0.0";
 const port = 3000;
 
-// router.get("/test/:id", function (req, res) {
-//   res.render("test", { output: req.params.id });
-// });
+router.get("/:id", function (req, res) {
+  console.log(req.params.id);
+  res.render("test", { output: req.params.id });
+});
 
 const server = http.createServer((req, res) => {
   // let urlParts = url.parse(req.url);
