@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
-  res.end("Test done 2");
+//   res.end("Test done 2");
 
   if (req.method === "GET") {
     switch (urlParts.pathname) {
