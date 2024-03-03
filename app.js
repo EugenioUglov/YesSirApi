@@ -14,7 +14,7 @@ app.get("/singular", function (req, res) {
   const requestParam = req.query.request;
 
   res.status(200).send({
-    responce: pluralizer.singular(requestParam),
+    response: pluralizer.singular(requestParam),
   });
 });
 
@@ -22,7 +22,7 @@ app.get("/plural", function (req, res) {
   const requestParam = req.query.request;
 
   res.status(200).send({
-    responce: pluralizer.plural(requestParam),
+    response: pluralizer.plural(requestParam),
   });
 });
 
