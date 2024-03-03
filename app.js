@@ -6,12 +6,23 @@ const app = express();
 const hostname = "0.0.0.0";
 const port = 3000;
 
-app.get("/", function (req, res) {
-  // console.log(req.params.id);
-  // res.render("test", { output: req.params.id });
+
+let pluralizer = require("./pluralize.js");
+  
+
+app.get("/singular", function (req, res) {
+  const requestParam = req.query.request;
 
   res.status(200).send({
-    test: req.query.id,
+    responce: pluralizer.singular(requestParam),
+  });
+});
+
+app.get("/plural", function (req, res) {
+  const requestParam = req.query.request;
+
+  res.status(200).send({
+    responce: pluralizer.plural(requestParam),
   });
 });
 
@@ -21,26 +32,10 @@ app.get("/", function (req, res) {
 //   res.statusCode = 200;
 //   res.setHeader("Content-Type", "text/plain");
 //   res.end("Test done 2");
-
-//   // if (req.method === "GET") {
-//   //   switch (urlParts.pathname) {
-//   //     case "/test:id":
-//   //       res.end("Test");
-//   //       break;
-
-//   //     default:
-//   //       break;
-//   //   }
-//   // }
 // });
 
-// server.listen(port, hostname, () => {
-//   console.log("test");
-// });
 
-// let pluralizer = require("./pluralize.js");
-// console.log(pluralizer.singular("cars"));
-// console.log(pluralizer.plural("family"));
+
 
 app.listen(3000, () => {
   console.log("sercver listen");
