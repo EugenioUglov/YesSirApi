@@ -6,36 +6,42 @@ const app = express();
 const hostname = "0.0.0.0";
 const port = 3000;
 
-app.get("/:id", function (req, res) {
-  console.log(req.params.id);
-  res.render("test", { output: req.params.id });
+app.get("/", function (req, res) {
+  // console.log(req.params.id);
+  // res.render("test", { output: req.params.id });
+
+  res.status(200).send({
+    test: req.query.id,
+  });
 });
 
-const server = http.createServer((req, res) => {
-  // let urlParts = url.parse(req.url);
+// const server = http.createServer((req, res) => {
+//   // let urlParts = url.parse(req.url);
 
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Test done 2");
+//   res.statusCode = 200;
+//   res.setHeader("Content-Type", "text/plain");
+//   res.end("Test done 2");
 
-  // if (req.method === "GET") {
-  //   switch (urlParts.pathname) {
-  //     case "/test:id":
-  //       res.end("Test");
-  //       break;
+//   // if (req.method === "GET") {
+//   //   switch (urlParts.pathname) {
+//   //     case "/test:id":
+//   //       res.end("Test");
+//   //       break;
 
-  //     default:
-  //       break;
-  //   }
-  // }
+//   //     default:
+//   //       break;
+//   //   }
+//   // }
+// });
+
+// server.listen(port, hostname, () => {
+//   console.log("test");
+// });
+
+// let pluralizer = require("./pluralize.js");
+// console.log(pluralizer.singular("cars"));
+// console.log(pluralizer.plural("family"));
+
+app.listen(3000, () => {
+  console.log("sercver listen");
 });
-
-server.listen(port, hostname, () => {
-  console.log("test");
-});
-
-let pluralizer = require("./pluralize.js");
-console.log(pluralizer.singular("cars"));
-console.log(pluralizer.plural("family"));
-
-// app.listen(3000, function () { });
